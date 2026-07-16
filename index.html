@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ISLA Perfumes - Timeless Filipino-inspired fragrances crafted for all senses.">
+    <meta name="description" content="ISLA Perfumes - Timeless Filipino-inspired fragrances crafted for all senses. Simple. Elegant. Unforgettable.">
     <title>ISLA Perfumes | Timeless Scents from the Islands</title>
     
     <link rel="icon" href="https://i.imgur.com/Bjk2EoY.jpeg" type="image/jpeg">
@@ -61,10 +61,77 @@
         </div>
     </nav>
 
-    <!-- HERO, TRUST BAR, COLLECTION (same as before) -->
-    <!-- ... keep your hero, trust bar, and collection sections ... -->
+    <!-- HERO -->
+ <header class="relative min-h-screen md:h-[85vh] flex flex-col md:flex-row md:items-center text-[#f8f4eb] overflow-hidden bg-[#3B4428]">
+    
+    <!-- IMAGE CONTAINER: Focuses tightly on the product bottle for mobile viewports -->
+    <div class="relative w-full h-[45vh] sm:h-[50vh] md:absolute md:inset-0 md:h-full z-0 overflow-hidden flex-shrink-0 bg-[#3B4428]">
+        <!-- Mobile: Anchored to the right (75%) so the bottle is perfectly centered on small screens -->
+        <img src="https://i.imgur.com/Tv1kuu8.png" 
+             alt="ISLA Campaign" 
+             class="w-full h-full object-cover object-[75%_center] md:object-center transition-all duration-700 select-none">
+        
+        <!-- Mobile Bottom Fade Overlay: Smooth transition from the image into your olive text block -->
+        <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#3B4428] via-[#3B4428]/40 to-transparent md:hidden"></div>
+    </div>
+    
+    <!-- PC DESKTOP GRADIENT OVERLAY: Activates on desktop to read text easily over the image -->
+    <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-[#3B4428] via-[#3B4428]/85 to-transparent z-10"></div>
+    
+    <!-- PC Bottom Fade Accent -->
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#f8f4eb]/10 to-transparent z-10 hidden md:block"></div>
 
-    <!-- COLLECTION (with bigger bottles) -->
+    <!-- TEXT CONTENT CONTAINER -->
+    <div class="max-w-7xl mx-auto px-6 py-12 md:py-0 md:px-12 relative z-20 w-full flex-1 flex items-center md:block">
+        <div class="max-w-lg md:max-w-xl text-center md:text-left mx-auto md:mx-0">
+            <p class="tagline uppercase tracking-[4px] text-xs md:text-sm mb-4 text-[#ede6d8]">
+                CRAFTED FOR ALL SENSES
+            </p>
+            
+            <!-- FIXED TEXT LAYER: Unified into a single, clean paragraph heading -->
+            <h1 class="heading-font text-4xl sm:text-5xl md:text-6xl leading-[1.2] font-light mb-6 text-[#f8f4eb]">
+                Simple. Timeless. ISLA.
+            </h1>
+            
+            <!-- FIXED SUB-TEXT: Ordered sentences stacked cleanly using block rules -->
+            <p class="text-base sm:text-lg text-[#ede6d8]/90 mb-8 font-light tracking-wide leading-relaxed">
+                Every scent tells a story.
+                <span class="block mt-1">Make it yours.</span>
+            </p>
+            
+            <button onclick="document.getElementById('collection').scrollIntoView({ behavior: 'smooth' })" 
+                    class="bg-[#f8f4eb] text-[#3B4428] hover:bg-[#ede6d8] px-8 py-4 md:px-10 md:py-5 rounded-full text-xs md:text-sm tracking-widest font-medium transition-all transform hover:scale-105 active:scale-95 shadow-xl uppercase w-full sm:w-auto">
+                FIND YOUR SCENT
+            </button>
+        </div>
+    </div>
+</header>
+
+    <!-- TRUST BAR -->
+    <div class="max-w-7xl mx-auto py-12 grid grid-cols-2 md:grid-cols-4 gap-8 px-6 border-b bg-[#f8f4eb]">
+        <div class="flex flex-col items-center text-center">
+            <i class="fa-solid fa-droplet text-4xl text-[#556B2F] mb-4"></i>
+            <div class="font-semibold text-sm text-[#3B4428]">EAU DE PARFUM</div>
+            <div class="text-xs text-neutral-500 mt-1">Long-lasting &amp; premium quality</div>
+        </div>
+        <div class="flex flex-col items-center text-center">
+            <i class="fa-solid fa-seedling text-4xl text-[#556B2F] mb-4"></i>
+            <div class="font-semibold text-sm text-[#3B4428]">CRAFTED WITH CARE</div>
+            <div class="text-xs text-neutral-500 mt-1">Made with the finest ingredients</div>
+        </div>
+        <div class="flex flex-col items-center text-center">
+            <i class="fa-solid fa-leaf text-4xl text-[#556B2F] mb-4"></i>
+            <div class="font-semibold text-sm text-[#3B4428]">INSPIRED BY ISLANDS</div>
+            <div class="text-xs text-neutral-500 mt-1">Timeless scents, unforgettable memories</div>
+        </div>
+        <div class="flex flex-col items-center text-center">
+            <i class="fa-solid fa-heart text-4xl text-[#556B2F] mb-4"></i>
+            <div class="font-semibold text-sm text-[#3B4428]">FOR EVERY YOU</div>
+            <div class="text-xs text-neutral-500 mt-1">Designed for every mood &amp; moment</div>
+        </div>
+    </div>
+
+    <!-- COLLECTION Perfume Bottles -->
     <section id="collection" class="bg-[#3B4428] text-[#f8f4eb] py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -75,28 +142,28 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
                 <div onclick="showImageModal('ALON')" class="group flex flex-col h-full cursor-pointer">
-                    <div class="w-full max-w-[260px] sm:max-w-[280px] lg:max-w-[300px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
+                    <div class="w-full max-w-[260px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
                         <img src="https://i.imgur.com/cQtp3gS.jpeg" alt="ALON" class="w-full h-full object-cover">
                     </div>
                     <h3 class="heading-font scent-name text-2xl text-center">ALON</h3>
                 </div>
 
                 <div onclick="showImageModal('HALIMUYAK')" class="group flex flex-col h-full cursor-pointer">
-                    <div class="w-full max-w-[260px] sm:max-w-[280px] lg:max-w-[300px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
+                    <div class="w-full max-w-[260px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
                         <img src="https://i.imgur.com/fQB9yGL.jpeg" alt="HALIMUYAK" class="w-full h-full object-cover">
                     </div>
                     <h3 class="heading-font scent-name text-2xl text-center">HALIMUYAK</h3>
                 </div>
 
                 <div onclick="showImageModal('SINTA')" class="group flex flex-col h-full cursor-pointer">
-                    <div class="w-full max-w-[260px] sm:max-w-[280px] lg:max-w-[300px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
+                    <div class="w-full max-w-[260px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
                         <img src="https://i.imgur.com/DbrkgbY.jpeg" alt="SINTA" class="w-full h-full object-cover">
                     </div>
                     <h3 class="heading-font scent-name text-2xl text-center">SINTA</h3>
                 </div>
 
                 <div onclick="showImageModal('SILONG')" class="group flex flex-col h-full cursor-pointer">
-                    <div class="w-full max-w-[260px] sm:max-w-[280px] lg:max-w-[300px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
+                    <div class="w-full max-w-[260px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
                         <img src="https://i.imgur.com/Q32vaeV.jpeg" alt="SILONG" class="w-full h-full object-cover">
                     </div>
                     <h3 class="heading-font scent-name text-2xl text-center">SILONG</h3>
