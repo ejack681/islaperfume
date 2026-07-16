@@ -173,18 +173,13 @@
     </section>
 
     <!-- IMAGE POP-UP MODAL -->
-    <div id="imageModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100] p-4">
-        <div class="modal bg-white max-w-md w-full rounded-3xl overflow-hidden shadow-2xl">
-            <div class="relative">
-                <button onclick="closeImageModal()" class="absolute top-4 right-4 text-4xl text-white drop-shadow-lg z-10">&times;</button>
-                <img id="modalImage" src="" alt="" class="w-full h-auto">
-            </div>
-            <div class="p-6 text-center">
-                <h2 id="modalName" class="heading-font text-3xl mb-2"></h2>
-                <p id="modalDesc" class="text-neutral-600 leading-relaxed"></p>
-            </div>
-        </div>
+  <div id="imageModal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[100] p-4">
+    <div class="modal bg-[#3B4428] text-[#f8f4eb] max-w-md w-full rounded-3xl overflow-hidden shadow-2xl relative">
+        <button onclick="closeImageModal()" 
+                class="absolute top-4 right-4 text-4xl text-[#f8f4eb] hover:text-white z-10">&times;</button>
+        <img id="modalImage" src="" alt="Perfume Details" class="w-full h-auto">
     </div>
+</div>
 
     <!-- OUR STORY -->
     <section class="bg-[#f8f4eb] py-24 border-b border-[#3B4428]/10">
