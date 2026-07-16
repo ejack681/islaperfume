@@ -105,16 +105,25 @@
         </div>
     </section>
 
-    <!-- DARK POP-UP WITH LIGHT TEXT -->
-    <div id="imageModal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[100] p-4">
-        <div class="modal bg-[#3B4428] text-[#f8f4eb] max-w-md w-full rounded-3xl overflow-hidden shadow-2xl">
-            <div class="relative">
-                <button onclick="closeImageModal()" 
-                        class="absolute top-4 right-4 text-4xl text-[#f8f4eb] hover:text-white z-10">&times;</button>
-                <img id="modalImage" src="" alt="Perfume Details" class="w-full h-auto">
-            </div>
+   <!-- IMAGE POP-UP MODAL -->
+<div id="imageModal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[100] p-4">
+    <div class="modal bg-[#3B4428] text-[#f8f4eb] max-w-md w-full rounded-3xl overflow-hidden shadow-2xl">
+        
+        <!-- Image -->
+        <div class="relative">
+            <button onclick="closeImageModal()" 
+                    class="absolute top-4 right-4 text-4xl text-[#f8f4eb] hover:text-white z-10">&times;</button>
+            <img id="modalImage" src="" alt="Perfume Details" class="w-full h-auto">
         </div>
+        
+        <!-- Description Area - Custom Colors -->
+        <div class="p-6 bg-[#3B4428] text-[#f8f4eb]">   <!-- ← Change these colors as you like -->
+            <h2 id="modalName" class="heading-font text-3xl mb-3 text-[#f8f4eb]"></h2>
+            <p id="modalDesc" class="leading-relaxed"></p>
+        </div>
+        
     </div>
+</div>
 
     <!-- OUR STORY, NEWSLETTER, FOOTER -->
     <section class="bg-[#f8f4eb] py-24 border-b border-[#3B4428]/10">
