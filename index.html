@@ -62,24 +62,50 @@
     </nav>
 
     <!-- HERO -->
-    <header class="relative min-h-screen md:h-[85vh] flex flex-col md:flex-row md:items-center text-[#f8f4eb] overflow-hidden bg-[#3B4428]">
-        <div class="relative w-full h-[45vh] sm:h-[50vh] md:absolute md:inset-0 md:h-full z-0 overflow-hidden">
-            <img src="https://i.imgur.com/Tv1kuu8.png" alt="ISLA Campaign" class="w-full h-full object-cover object-[75%_center] md:object-center">
-        </div>
-        <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-[#3B4428] via-[#3B4428]/85 to-transparent z-10"></div>
+ <header class="relative min-h-screen md:h-[85vh] flex flex-col md:flex-row md:items-center text-[#f8f4eb] overflow-hidden bg-[#3B4428]">
+    
+    <!-- IMAGE CONTAINER: Focuses tightly on the product bottle for mobile viewports -->
+    <div class="relative w-full h-[45vh] sm:h-[50vh] md:absolute md:inset-0 md:h-full z-0 overflow-hidden flex-shrink-0 bg-[#3B4428]">
+        <!-- Mobile: Anchored to the right (75%) so the bottle is perfectly centered on small screens -->
+        <img src="https://i.imgur.com/Tv1kuu8.png" 
+             alt="ISLA Campaign" 
+             class="w-full h-full object-cover object-[75%_center] md:object-center transition-all duration-700 select-none">
+        
+        <!-- Mobile Bottom Fade Overlay: Smooth transition from the image into your olive text block -->
+        <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#3B4428] via-[#3B4428]/40 to-transparent md:hidden"></div>
+    </div>
+    
+    <!-- PC DESKTOP GRADIENT OVERLAY: Activates on desktop to read text easily over the image -->
+    <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-[#3B4428] via-[#3B4428]/85 to-transparent z-10"></div>
+    
+    <!-- PC Bottom Fade Accent -->
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#f8f4eb]/10 to-transparent z-10 hidden md:block"></div>
 
-        <div class="max-w-7xl mx-auto px-6 py-12 md:py-0 md:px-12 relative z-20 w-full flex-1 flex items-center md:block">
-            <div class="max-w-lg md:max-w-xl text-center md:text-left mx-auto md:mx-0">
-                <p class="uppercase tracking-[4px] text-xs md:text-sm mb-4 text-[#ede6d8]">CRAFTED FOR ALL SENSES</p>
-                <h1 class="heading-font text-4xl sm:text-5xl md:text-6xl leading-[1.2] font-light mb-6">Simple. Timeless. ISLA.</h1>
-                <p class="text-base sm:text-lg text-[#ede6d8]/90 mb-8">Every scent tells a story.<br>Make it yours.</p>
-                <button onclick="document.getElementById('collection').scrollIntoView({ behavior: 'smooth' })" 
-                        class="bg-[#f8f4eb] text-[#3B4428] hover:bg-[#ede6d8] px-8 py-4 md:px-10 md:py-5 rounded-full text-xs md:text-sm tracking-widest font-medium transition-all hover:scale-105">
-                    FIND YOUR SCENT
-                </button>
-            </div>
+    <!-- TEXT CONTENT CONTAINER -->
+    <div class="max-w-7xl mx-auto px-6 py-12 md:py-0 md:px-12 relative z-20 w-full flex-1 flex items-center md:block">
+        <div class="max-w-lg md:max-w-xl text-center md:text-left mx-auto md:mx-0">
+            <p class="tagline uppercase tracking-[4px] text-xs md:text-sm mb-4 text-[#ede6d8]">
+                CRAFTED FOR ALL SENSES
+            </p>
+            
+            <!-- FIXED TEXT LAYER: Unified into a single, clean paragraph heading -->
+            <h1 class="heading-font text-4xl sm:text-5xl md:text-6xl leading-[1.2] font-light mb-6 text-[#f8f4eb]">
+                Simple. Timeless. ISLA.
+            </h1>
+            
+            <!-- FIXED SUB-TEXT: Ordered sentences stacked cleanly using block rules -->
+            <p class="text-base sm:text-lg text-[#ede6d8]/90 mb-8 font-light tracking-wide leading-relaxed">
+                Every scent tells a story.
+                <span class="block mt-1">Make it yours.</span>
+            </p>
+            
+            <button onclick="document.getElementById('collection').scrollIntoView({ behavior: 'smooth' })" 
+                    class="bg-[#f8f4eb] text-[#3B4428] hover:bg-[#ede6d8] px-8 py-4 md:px-10 md:py-5 rounded-full text-xs md:text-sm tracking-widest font-medium transition-all transform hover:scale-105 active:scale-95 shadow-xl uppercase w-full sm:w-auto">
+                FIND YOUR SCENT
+            </button>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- TRUST BAR -->
     <div class="max-w-7xl mx-auto py-12 grid grid-cols-2 md:grid-cols-4 gap-8 px-6 border-b bg-[#f8f4eb]">
@@ -105,7 +131,7 @@
         </div>
     </div>
 
-    <!-- COLLECTION -->
+    <!-- COLLECTION Perfume Bottles -->
     <section id="collection" class="bg-[#3B4428] text-[#f8f4eb] py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -116,78 +142,76 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
                 <div onclick="showImageModal('ALON')" class="group flex flex-col h-full cursor-pointer">
-                    <div class="w-full max-w-[260px] sm:max-w-[280px] lg:max-w-[300px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
+                    <div class="w-full max-w-[260px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
                         <img src="https://i.imgur.com/cQtp3gS.jpeg" alt="ALON" class="w-full h-full object-cover">
                     </div>
                     <h3 class="heading-font scent-name text-2xl text-center">ALON</h3>
+                    <p class="text-[#d4e0b8]/80 text-sm font-light mt-2 mb-6 flex-1 px-2 leading-relaxed text-center">captures the gentle rhythm of the waves, symbolizing freedom, calm, and new beginnings.</p>
                 </div>
 
                 <div onclick="showImageModal('HALIMUYAK')" class="group flex flex-col h-full cursor-pointer">
-                    <div class="w-full max-w-[260px] sm:max-w-[280px] lg:max-w-[300px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
+                    <div class="w-full max-w-[260px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
                         <img src="https://i.imgur.com/fQB9yGL.jpeg" alt="HALIMUYAK" class="w-full h-full object-cover">
                     </div>
                     <h3 class="heading-font scent-name text-2xl text-center">HALIMUYAK</h3>
+                    <p class="text-[#d4e0b8]/80 text-sm font-light mt-2 mb-6 flex-1 px-2 leading-relaxed text-center">is the lingering scent that awakens memories, the invisible trace that stays with you even after someone has gone.</p>
                 </div>
 
                 <div onclick="showImageModal('SINTA')" class="group flex flex-col h-full cursor-pointer">
-                    <div class="w-full max-w-[260px] sm:max-w-[280px] lg:max-w-[300px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
+                    <div class="w-full max-w-[260px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
                         <img src="https://i.imgur.com/DbrkgbY.jpeg" alt="SINTA" class="w-full h-full object-cover">
                     </div>
                     <h3 class="heading-font scent-name text-2xl text-center">SINTA</h3>
+                    <p class="text-[#d4e0b8]/80 text-sm font-light mt-2 mb-6 flex-1 px-2 leading-relaxed text-center">speaks of love that is sincere, enduring, and deeply felt.</p>
                 </div>
 
                 <div onclick="showImageModal('SILONG')" class="group flex flex-col h-full cursor-pointer">
-                    <div class="w-full max-w-[260px] sm:max-w-[280px] lg:max-w-[300px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
+                    <div class="w-full max-w-[260px] mx-auto aspect-[3/4] rounded-2xl mb-5 overflow-hidden shadow-lg bg-neutral-900 transition-transform group-hover:scale-105">
                         <img src="https://i.imgur.com/Q32vaeV.jpeg" alt="SILONG" class="w-full h-full object-cover">
                     </div>
                     <h3 class="heading-font scent-name text-2xl text-center">SILONG</h3>
+                    <p class="text-[#d4e0b8]/80 text-sm font-light mt-2 mb-6 flex-1 px-2 leading-relaxed text-center">is a place of shelter, comfort, and quiet refuge, where you feel safe and at peace.</p>
                 </div>
             </div>
         </div>
     </section>
 
-   <!-- IMAGE POP-UP MODAL -->
-<div id="imageModal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[100] p-4">
-    <div class="modal bg-[#3B4428] text-[#f8f4eb] max-w-md w-full rounded-3xl overflow-hidden shadow-2xl">
-        
-        <!-- Image -->
-        <div class="relative">
-            <button onclick="closeImageModal()" 
-                    class="absolute top-4 right-4 text-4xl text-[#f8f4eb] hover:text-white z-10">&times;</button>
-            <img id="modalImage" src="" alt="Perfume Details" class="w-full h-auto">
+    <!-- IMAGE POP-UP MODAL -->
+    <div id="imageModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100] p-4">
+        <div class="modal bg-white max-w-md w-full rounded-3xl overflow-hidden shadow-2xl">
+            <div class="relative">
+                <button onclick="closeImageModal()" class="absolute top-4 right-4 text-4xl text-white drop-shadow-lg z-10">&times;</button>
+                <img id="modalImage" src="" alt="" class="w-full h-auto">
+            </div>
+            <div class="p-6 text-center">
+                <h2 id="modalName" class="heading-font text-3xl mb-2"></h2>
+                <p id="modalDesc" class="text-neutral-600 leading-relaxed"></p>
+            </div>
         </div>
-        
-        <!-- Description Area - Custom Colors -->
-        <div class="p-6 bg-[#3B4428] text-[#f8f4eb]">   <!-- ← Change these colors as you like -->
-            <h2 id="modalName" class="heading-font text-3xl mb-3 text-[#f8f4eb]"></h2>
-            <p id="modalDesc" class="leading-relaxed"></p>
-        </div>
-        
     </div>
-</div>
 
-    <!-- OUR STORY, NEWSLETTER, FOOTER -->
+    <!-- OUR STORY -->
     <section class="bg-[#f8f4eb] py-24 border-b border-[#3B4428]/10">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div class="max-w-xl">
                 <span class="uppercase text-[#556B2F] tracking-[4px] text-xs font-semibold">OUR STORY</span>
                 <h2 class="heading-font text-4xl md:text-5xl mt-4 mb-6 leading-tight text-[#3B4428]">Made for you.</h2>
-                <div class="text-neutral-700 font-light space-y-6 leading-relaxed">
+                <div class="text-neutral-600 font-light space-y-6 leading-relaxed">
                     <p>In ISLA, we believe perfumes should do more than smell beautiful. It should transport you, awaken emotions, and become part of the memories you create.</p>
-                    <p>Each scent is named after a Filipino word, chosen for the emotion it holds.</p>
+                    <p>Each scent is named after a Filipino word, chosen not simply for its meaning, but for the emotion it holds. In Filipino culture, many words carry feelings that cannot be fully translated. They represent memories, places, relationships, and moments that live quietly in the heart.</p>
                 </div>
             </div>
-            <div class="relative w-full max-w-[280px] mx-auto">
-                <img src="https://i.imgur.com/3icLpgW.jpeg" alt="ISLA packaging" class="w-full rounded-2xl shadow-xl">
+            <div class="relative w-full max-w-[320px] mx-auto">
+                <img src="https://i.imgur.com/uycdL1i.jpeg" alt="ISLA packaging" class="w-full rounded-2xl shadow-xl">
             </div>
         </div>
     </section>
 
-    <!-- NEWSLETTER & FOOTER (same as before) -->
+    <!-- NEWSLETTER -->
     <div class="bg-[#3B4428] text-[#f8f4eb] py-16">
         <div class="max-w-lg mx-auto text-center px-6">
             <h3 class="heading-font text-3xl mb-3">STAY IN THE LOOP</h3>
-            <p class="text-[#d4e0b8]">Be the first to know about new scents and exclusive offers.</p>
+            <p class="text-[#d4e0b8] text-[15px]">Be the first to know about new scents and exclusive offers.</p>
             <form action="https://formspree.io/f/YOUR_CODE_HERE" method="POST" class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input type="email" name="email" placeholder="Enter your email" required 
                        class="flex-1 bg-transparent border border-[#d4e0b8]/50 focus:border-[#f8f4eb] px-6 py-4 rounded-3xl outline-none text-[#f8f4eb] placeholder:text-[#d4e0b8]">
@@ -196,50 +220,47 @@
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="bg-[#f8f4eb] pt-16 pb-12 border-t border-[#d4c9b0]">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <img src="https://i.imgur.com/Bjk2EoY.jpeg" alt="ISLA Logo" class="h-16 mx-auto mb-4" style="mix-blend-mode: multiply;">
-            <p class="text-xs text-neutral-500">Crafted for all senses.</p>
-            <a href="https://www.instagram.com/islaperfume" target="_blank" class="text-2xl text-[#3B4428] hover:text-[#556B2F] mt-6 inline-block">
+            <p class="text-xs text-neutral-500 mb-6">Crafted for all senses.</p>
+            <a href="https://www.instagram.com/islaperfume" target="_blank" class="text-2xl text-[#3B4428] hover:text-[#556B2F]">
                 <i class="fa-brands fa-instagram"></i>
             </a>
             <div class="mt-12 text-xs text-neutral-500">© 2026 ISLA PERFUMES. ALL RIGHTS RESERVED.</div>
         </div>
     </footer>
 
-<script>
-    function showImageModal(name) {
-        const modal = document.getElementById('imageModal');
-        const image = document.getElementById('modalImage');
-        const title = document.getElementById('modalName');
-        const desc = document.getElementById('modalDesc');
+    <script>
+        function showImageModal(name) {
+            const modal = document.getElementById('imageModal');
+            const image = document.getElementById('modalImage');
+            const title = document.getElementById('modalName');
+            const desc = document.getElementById('modalDesc');
 
-        let imageUrl = '';
-        let description = '';
+            let imageUrl = '';
+            let description = '';
 
-        if (name === 'ALON') {
-            imageUrl = 'https://i.imgur.com/cQtp3gS.jpeg';
-            description = 'captures the gentle rhythm of the waves, symbolizing freedom, calm, and new beginnings.';
-        } else if (name === 'HALIMUYAK') {
-            imageUrl = 'https://i.imgur.com/fQB9yGL.jpeg';
-            description = 'is the lingering scent that awakens memories, the invisible trace that stays with you even after someone has gone.';
-        } else if (name === 'SINTA') {
-            imageUrl = 'https://i.imgur.com/DbrkgbY.jpeg';
-            description = 'speaks of love that is sincere, enduring, and deeply felt.';
-        } else if (name === 'SILONG') {
-            imageUrl = 'https://i.imgur.com/Q32vaeV.jpeg';
-            description = 'is a place of shelter, comfort, and quiet refuge, where you feel safe and at peace.';
+          if (name === 'ALON') {
+                imageUrl = 'https://i.imgur.com/cQtp3gS.jpeg';   // ← Change to your notes image
+            } else if (name === 'HALIMUYAK') {
+                imageUrl = 'https://i.imgur.com/fQB9yGL.jpeg';
+            } else if (name === 'SINTA') {
+                imageUrl = 'https://i.imgur.com/DbrkgbY.jpeg';
+            } else if (name === 'SILONG') {
+                imageUrl = 'https://i.imgur.com/Q32vaeV.jpeg';
+            }
+
+            image.src = imageUrl;
+            title.textContent = name;
+            desc.textContent = description;
+            modal.classList.remove('hidden');
         }
 
-        image.src = imageUrl;
-        title.textContent = name;
-        desc.textContent = description;
-        modal.classList.remove('hidden');
-    }
-
-    function closeImageModal() {
-        document.getElementById('imageModal').classList.add('hidden');
-    }
-</script>
+        function closeImageModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
